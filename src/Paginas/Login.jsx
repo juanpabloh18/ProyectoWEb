@@ -30,9 +30,9 @@ const Login = () => {
                 .catch((error) => {
                     console.log(error);
                     setLoginError("Las credenciales no coinciden. Por favor, inténtalo de nuevo.");
-                    setShowError(true); // Mostrar el mensaje de error
+                    setShowError(true); 
                     setTimeout(() => {
-                        setShowError(false); // Ocultar el mensaje de error después de 5 segundos
+                        setShowError(false); 
                     }, 5000);
                 });
         }

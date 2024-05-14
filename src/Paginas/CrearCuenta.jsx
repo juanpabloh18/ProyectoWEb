@@ -33,7 +33,7 @@ const CrearCuenta = () => {
                 <input type="email" placeholder="Correo" value={email} onChange={(e) =>setEmail(e.target.value)}></input>
                 <input type="password" placeholder="contraseña" value={password} onChange={(e) => setPassword(e.target.value)}></input>
               <button type="submit">Sign up</button>
-              <p>Si ya tienes cuenta has<Link to="/">Login</Link></p>
+              <p>Si ya tienes cuenta has  <Link to="/">Login</Link></p>
             </form>
            </div>
         </>
