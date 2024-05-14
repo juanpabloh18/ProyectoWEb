@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../bd/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
-import NavbarAdmin from "../componentes/NavbarAdmin";
-import NavbarUser from "../componentes/NavbarUser";
+;
 
 const Login = () => {
     const [email, setEmail] = useState("");
