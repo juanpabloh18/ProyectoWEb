@@ -1,23 +1,27 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import { auth } from "../bd/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-
 import { Link, useNavigate } from "react-router-dom";
-
-
+import NavbarAdmin from "../componentes/NavbarAdmin";
+import NavbarUser from "../componentes/NavbarUser";
 
 const Login = () => {
     const [email, setEmail] = useState("");
-    const [password, setPassword] =useState("");
+    const [password, setPassword] = useState("");
     const [showError, setShowError] = useState(false);
     const [loginError, setLoginError] = useState("");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
+
     
+    const isAdmin = {
+        email: "juan@18.com",
+        password: "181001"
+    };
 
     const SignIn = (e) => {
         e.preventDefault();
-        if (email === "juan@18.com" && password === "181001") {
+        if (email === isAdmin.email && password === isAdmin.password) {
             setIsLoggedIn(true);
             navigate('/Home');
         } else {
@@ -30,15 +34,13 @@ const Login = () => {
                 .catch((error) => {
                     console.log(error);
                     setLoginError("Las credenciales no coinciden. Por favor, inténtalo de nuevo.");
-                    setShowError(true); 
+                    setShowError(true);
                     setTimeout(() => {
-                        setShowError(false); 
+                        setShowError(false);
                     }, 5000);
                 });
         }
     };
-
-    
 
     return (
         <>
