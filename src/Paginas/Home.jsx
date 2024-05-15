@@ -1,15 +1,17 @@
 import React from "react";
+import VistaAdmin from "../componentes/VistaAdmin";
+import VistaUser from "../componentes/VistaUser";
 
 
 
 
-const Home = () => {
+const Home = ({ userRole }) => {
   return (
-      <div>
-          <h1>Home</h1>
-          
-      </div>
+    <div>
+      {userRole === 'admin' ? <VistaAdmin /> : <VistaUser />}
+    </div>
   );
 }
+
 
 export default Home;
