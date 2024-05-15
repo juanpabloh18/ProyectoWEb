@@ -10,7 +10,7 @@ const NavbarUser =() =>{
         <Menu inverted borderless style ={{padding: "0.3rem", marginBotton:"20px"}} attached>
             <Container>
                 <Menu.Item name="home">
-                    <Link to= "/">
+                    <Link to= "/Home">
                     <Image size="mini" src={reactLogo}/>
                     </Link>
                 </Menu.Item>
@@ -18,7 +18,7 @@ const NavbarUser =() =>{
                     <h2>PanelUser</h2>
                 </Menu.Item>
                 <Menu.Item position="right">
-                    <Button size="mini" primary onClick={()=> navigate("/Agregar")}>Agregar Usuario</Button>
+                    <Button size="mini" primary onClick={()=> navigate("/Agregar")}>Mis torneos</Button>
 
                 </Menu.Item>
             </Container>

@@ -16,10 +16,10 @@ const NavbarAdmin =() =>{
                     </Link>
                 </Menu.Item>
                 <Menu.Item>
-                    <h2>Taller CRUD IMG</h2>
+                    <h2>Panel de Administrador</h2>
                 </Menu.Item>
                 <Menu.Item position="right">
-                    <Button size="mini" primary onClick={()=> navigate("/Agregar")}>Agregar Usuario</Button>
+                    <Button size="mini" primary onClick={()=> navigate("/Agregar")}>Agregar Torneo</Button>
 
                 </Menu.Item>
             </Container>
