@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { auth } from "../bd/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Login = ({ setUserRole }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [showError, setShowError] = useState(false);
-    const [loginError, setLoginError] = useState("");
     const navigate = useNavigate();
 
     const isAdmin = {
@@ -29,11 +28,11 @@ const Login = ({ setUserRole }) => {
                 })
                 .catch((error) => {
                     console.log(error);
-                    setLoginError("Las credenciales no coinciden. Por favor, inténtalo de nuevo.");
-                    setShowError(true);
-                    setTimeout(() => {
-                        setShowError(false);
-                    }, 5000);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error de autenticación',
+                        text: 'Usuario o contraseña incorrectos. Por favor, inténtelo de nuevo.',
+                    });
                 });
         }
     };
@@ -56,7 +55,7 @@ const Login = ({ setUserRole }) => {
                 />
                 <button type="submit">Login</button>
                 <p>No tienes cuenta <Link to="/CrearCuenta">Regístrate</Link></p>
-                {showError && <p style={{ textAlign: "center", color: "red" }}>{loginError}</p>}
+                
             </form>
         </div>
     );
