@@ -38,22 +38,22 @@ const Login = ({ setUserRole }) => {
     };
 
     return (
-        <div>
+        <div className="container mt-5 d-flex flex-column align-items-center">
             <form onSubmit={SignIn}>
-                <h1>Login</h1>
+                <h1 className="display-1 fw-bold mb-4">Login</h1>
                 <input 
                     type="email" 
                     placeholder="Correo" 
                     value={email} 
                     onChange={(e) => setEmail(e.target.value)} 
                 />
-                <input 
+                <input className= "d-grid gap-2"
                     type="password" 
                     placeholder="Contraseña" 
                     value={password} 
                     onChange={(e) => setPassword(e.target.value)} 
                 />
-                <button type="submit">Login</button>
+                <button type="submit" className="btn btn-primary w-100">Login</button>
                 <p>No tienes cuenta <Link to="/CrearCuenta">Regístrate</Link></p>
                 
             </form>
