@@ -30,10 +30,10 @@ const NavbarAdmin = () => {
                 <Menu.Item>
                     <h2>Panel de Administrador</h2>
                 </Menu.Item>
-                <Menu.Item position="center">
+                <Menu.Item position="right">
                     <Button size="mini" primary onClick={() => navigate("/Agregar")}>Agregar Torneo</Button>
                 </Menu.Item>
-                <Menu.Item position="right">
+                <Menu.Item >
                     <Button size="mini" primary onClick={handleLogout} >Cerrar sesión</Button>
                 </Menu.Item>
             </Container>
