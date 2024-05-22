@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
 import { ref, deleteObject } from "firebase/storage";
 import NavbarAdmin from "./NavbarAdmin";
+import ModalComponente from "../componentes/ModalComponente";
 
 const VistaAdmin = () => {
   const [users, setUsers] = useState([]);
