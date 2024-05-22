@@ -84,7 +84,7 @@ const VistaAdmin = () => {
                   <Card.Header style={{ marginTop: "10px" }}>
                     {item.name}
                   </Card.Header>
-                  <Card.Description style={{ textAlign: "center" }}>{item.info}</Card.Description>
+                  <Card.Description style={{ textAlign: "center" }}><p>cupos disponibles:{item.participants}</p></Card.Description>
                 </Card.Content>
                 <Card.Content extra>
                   <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
