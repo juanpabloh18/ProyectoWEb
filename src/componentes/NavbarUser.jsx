@@ -31,7 +31,7 @@ const NavbarUser = () => {
                     <h2>PanelUser</h2>
                 </Menu.Item>
                 <Menu.Item position="right">
-                   {/* <Button size="mini" primary onClick={() => navigate("/Agregar")}>Mis torneos</Button>*/}
+                    <Button size="mini" primary onClick={() => navigate("/MisTorneos")}>Mis torneos</Button>
                 </Menu.Item>
                 <Menu.Item>
                     <Button size="mini" primary onClick={handleLogout} >Cerrar sesión</Button>

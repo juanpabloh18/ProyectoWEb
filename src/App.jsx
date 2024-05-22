@@ -4,6 +4,7 @@ import Login from './Paginas/Login';
 import CrearCuenta from './Paginas/CrearCuenta';
 import Home from './Paginas/Home';
 import AgregarActualizar from './Paginas/AgregarActualizar';
+import MisTorneos from './Paginas/MisTorneos';
 
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Home" element={<Home userRole={userRole} />} />
         <Route path='/Agregar' element={<AgregarActualizar/>}/>
         <Route path='/Actualizar/:id' element={<AgregarActualizar/>}/>
+        <Route path='/MisTorneos/:id' element={<MisTorneos />} />
         <Route/>
       </Routes>
     </Router>
