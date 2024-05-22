@@ -19,7 +19,7 @@ function App() {
         <Route path="/Home" element={<Home userRole={userRole} />} />
         <Route path='/Agregar' element={<AgregarActualizar/>}/>
         <Route path='/Actualizar/:id' element={<AgregarActualizar/>}/>
-        <Route path='/MisTorneos/:id' element={<MisTorneos />} />
+        
         <Route/>
       </Routes>
     </Router>
