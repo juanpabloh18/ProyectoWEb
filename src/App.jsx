@@ -4,7 +4,7 @@ import Login from './Paginas/Login';
 import CrearCuenta from './Paginas/CrearCuenta';
 import Home from './Paginas/Home';
 import AgregarActualizar from './Paginas/AgregarActualizar';
-import MisTorneos from './Paginas/MisTorneos';
+
 
 
 
