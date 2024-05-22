@@ -38,26 +38,39 @@ const Login = ({ setUserRole }) => {
     };
 
     return (
-        <div className="container mt-5 d-flex flex-column align-items-center">
+        <div className="container d-flex justify-content-center align-items-center min-vh-100">
+        <div className="card p-4 shadow-sm" style={{ maxWidth: '400px', width: '100%' }}>
+            <div className="text-center mb-4">
+                <h1>Bienvenido</h1>
+            </div>
             <form onSubmit={SignIn}>
-                <h1 className="display-1 fw-bold mb-4">Login</h1>
-                <input 
-                    type="email" 
-                    placeholder="Correo" 
-                    value={email} 
-                    onChange={(e) => setEmail(e.target.value)} 
-                />
-                <input className= "d-grid gap-2"
-                    type="password" 
-                    placeholder="Contraseña" 
-                    value={password} 
-                    onChange={(e) => setPassword(e.target.value)} 
-                />
-                <button type="submit" className="btn btn-primary w-100">Login</button>
-                <p>No tienes cuenta <Link to="/CrearCuenta">Regístrate</Link></p>
-                
+                <div className="mb-3">
+                    <input
+                        type="email"
+                        className="form-control form-control-lg"
+                        placeholder="Correo"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="mb-3">
+                    <input
+                        type="password"
+                        className="form-control form-control-lg"
+                        placeholder="Contraseña"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <div className="d-grid">
+                    <button type="submit" className="btn btn-primary btn-lg">Login</button>
+                </div>
+                <p className="text-center mt-3">
+                    No tienes cuenta? <Link to="/CrearCuenta">Regístrate</Link>
+                </p>
             </form>
         </div>
+    </div>
     );
 }
 
