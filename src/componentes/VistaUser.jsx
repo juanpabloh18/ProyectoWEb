@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db, auth } from "../bd/firebase";
 import { Button, Card, Grid, Container, Image } from "semantic-ui-react";
-import { collection, onSnapshot, addDoc, updateDoc, deleteDoc, doc, getDoc, getDocs, query, where } from "firebase/firestore";
+import { collection, onSnapshot, addDoc, updateDoc, deleteDoc, doc, getDoc, getDocs, query, where, arrayUnion, arrayRemove } from "firebase/firestore";
 import NavbarUser from "./NavbarUser";
 import ModalComponente2 from "./ModalComponente2";
 
@@ -66,9 +66,10 @@ const VistaUser = () => {
           const torneoData = torneoSnap.data();
           const updatedParticipants = torneoData.participants - 1;
 
-          // Actualizar el número de participantes
+          // Actualizar el número de participantes y agregar email a la lista de participantes
           await updateDoc(torneoRef, {
             participants: updatedParticipants,
+            participantes: arrayUnion(user.email),
           });
 
           // Añadir la inscripción del usuario
@@ -104,9 +105,10 @@ const VistaUser = () => {
           const torneoData = torneoSnap.data();
           const updatedParticipants = torneoData.participants + 1;
 
-          // Actualizar el número de participantes
+          // Actualizar el número de participantes y eliminar email de la lista de participantes
           await updateDoc(torneoRef, {
             participants: updatedParticipants,
+            participantes: arrayRemove(user.email),
           });
 
           // Eliminar la inscripción del usuario

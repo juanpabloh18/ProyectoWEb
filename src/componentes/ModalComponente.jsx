@@ -1,4 +1,3 @@
-// src/ModalComponente.js
 import React from "react";
 import { Modal, Header, Image, Button } from "semantic-ui-react";
 
@@ -10,6 +9,7 @@ const ModalComponente = ({
     info,
     date,
     participants,
+    participantes,
     id,
     handleDelete,
 }) => {
@@ -23,6 +23,12 @@ const ModalComponente = ({
                     <p>Cupos disponibles: {participants}</p>
                     <p>Fecha: {date}</p>
                     <p>Información: {info}</p>
+                    <Header as="h4">Participantes:</Header>
+                    <ul>
+                        {participantes && participantes.map((email, index) => (
+                            <li key={index}>{email}</li>
+                        ))}
+                    </ul>
                 </Modal.Description>
             </Modal.Content>
             <Modal.Actions>
