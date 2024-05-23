@@ -127,7 +127,7 @@ const AgregarActualizar = () => {
     };
 
     const handleCancel = () => {
-        navigate("/Home"); // Redirige a la página de inicio o cualquier otra página deseada
+        navigate("/Home"); 
     };
 
     return (
