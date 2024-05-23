@@ -28,7 +28,7 @@ const NavbarUser = () => {
                     </Link>
                 </Menu.Item>
                 <Menu.Item>
-                    <h2>PanelUser</h2>
+                    <h2>Bienvendido</h2>
                 </Menu.Item>
                 <Menu.Item position="right">
                     
