@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form, Grid, Loader } from "semantic-ui-react";
 import { ref, uploadBytesResumable, getDownloadURL, deleteObject } from "firebase/storage";
-import { db,storage } from "../bd/firebase";
-import { addDoc, collection, doc, getDoc, serverTimestamp, updateDoc  } from "firebase/firestore";
+import { db, storage } from "../bd/firebase";
+import { addDoc, collection, doc, getDoc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { useNavigate, useParams } from "react-router-dom";
 
 const initialState = {
@@ -126,6 +126,10 @@ const AgregarActualizar = () => {
         }
     };
 
+    const handleCancel = () => {
+        navigate("/Home"); // Redirige a la página de inicio o cualquier otra página deseada
+    };
+
     return (
         <div>
             <Grid centered verticalAlign="middle" columns="3" style={{ height: "80vh" }}>
@@ -175,13 +179,22 @@ const AgregarActualizar = () => {
                                             type="file"
                                             onChange={(e) => setFile(e.target.files[0])}
                                         />
-                                        <Button
-                                            primary
-                                            type="submit"
-                                            disabled={progress !== null && progress < 100}
-                                        >
-                                            Subir
-                                        </Button>
+                                        <Button.Group style={{gap:"20px"}}>
+                                            <Button
+                                                primary
+                                                type="submit"
+                                                disabled={progress !== null && progress < 100}
+                                            >
+                                                Subir
+                                            </Button>
+                                            <Button
+                                                secondary
+                                                type="button"
+                                                onClick={handleCancel}
+                                            >
+                                                Cancelar
+                                            </Button>
+                                        </Button.Group>
                                     </Form>
                                 </>
                             )}
