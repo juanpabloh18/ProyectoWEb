@@ -58,19 +58,19 @@ const VistaUser = () => {
       const user = auth.currentUser;
       if (user) {
         const uid = user.uid;
-
+  
         // Obtener datos más recientes del torneo
         const torneoRef = doc(db, "torneos", torneo.id);
         const torneoSnap = await getDoc(torneoRef);
         if (torneoSnap.exists()) {
           const torneoData = torneoSnap.data();
           const updatedParticipants = torneoData.participants - 1;
-
+  
           // Actualizar el número de participantes
           await updateDoc(torneoRef, {
             participants: updatedParticipants,
           });
-
+  
           // Añadir la inscripción del usuario
           await addDoc(collection(db, "users", uid, "torneosInscritos"), {
             torneoId: torneo.id,
@@ -80,22 +80,17 @@ const VistaUser = () => {
             participants: updatedParticipants,
             img: torneo.img,
           });
-
+  
           // Actualizar estado local
           setInscritos([...inscritos, torneo.id]);
           alert("Te has inscrito en el torneo correctamente.");
-        } else {
-          console.error("El torneo no existe.");
-          alert("El torneo no existe.");
         }
-      } else {
-        alert("Debes iniciar sesión para inscribirte en el torneo.");
       }
     } catch (error) {
       console.error("Error al inscribirse en el torneo:", error);
-      alert("Ha ocurrido un error al inscribirse en el torneo. Por favor, inténtalo de nuevo más tarde.");
     }
   };
+  
 
   return (
     <>
